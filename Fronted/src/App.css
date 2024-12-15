@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .App {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  /* Notification Banner */
+  .notification {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Auth Section */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  input,
+  textarea,
+  button {
+    font-size: 1rem;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #f5ba13;
+    outline: none;
+    box-shadow: 0 0 5px rgba(245, 186, 19, 0.5);
+  }
+  
+  button {
+    background: #f5ba13;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #f39c12;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Notes Section */
+  .notes-list {
+    margin-top: 20px;
+  }
+  
+  .note {
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+  
+  .note h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #444;
+  }
+  
+  .note p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .note button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .note button:hover {
+    background: #c0392b;
+  }
+  
+  /* Welcome Section */
+  .welcome-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #444;
+  }
+  
+  .welcome-container button {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .welcome-container button:hover {
+    background: #c0392b;
+  }
+  
+  .note {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .note.checked {
+    background-color: #f0f8ff;
+    border: 2px solid #007bff;
+  }
+  
+  .notification {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .App {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    input,
+    textarea {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }
+  
