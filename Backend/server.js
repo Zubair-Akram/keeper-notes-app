@@ -7,14 +7,14 @@ import jwt from 'jsonwebtoken';
 // Configuration
 const app = express();
 const PORT = 5000;
-const JWT_SECRET = 'your_jwt_secret_key'; // Replace with a secure key
-const MONGO_URI = 'mongodb://127.0.0.1:27017/keeperNotes'; // Replace with your MongoDB URI
+const JWT_SECRET = 'your_jwt_secret_key'; 
+const MONGO_URI = 'mongodb://127.0.0.1:27017/keeperNotes'; 
 
-// Middleware
+
 app.use(express.json());
 app.use(cors());
 
-// MongoDB Models
+
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -28,14 +28,13 @@ const noteSchema = new mongoose.Schema({
 });
 const Note = mongoose.model('Note', noteSchema);
 
-// MongoDB Connection
+
 mongoose
   .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Failed to connect to MongoDB', err));
 
-// Routes
-// User Registration
+
 app.post('/api/auth/register', async (req, res) => {
   const { username, password } = req.body;
 
@@ -55,7 +54,7 @@ app.post('/api/auth/register', async (req, res) => {
   }
 });
 
-// User Login
+
 app.post('/api/auth/login', async (req, res) => {
   const { username, password } = req.body;
 
@@ -80,7 +79,7 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-// Middleware to Verify Token
+
 const authenticateToken = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) {
@@ -97,7 +96,7 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// Add Note
+
 app.post('/api/notes/add', authenticateToken, async (req, res) => {
   const { title, content } = req.body;
 
@@ -115,7 +114,7 @@ app.post('/api/notes/add', authenticateToken, async (req, res) => {
   }
 });
 
-// Get All Notes for Logged-In User
+
 app.get('/api/notes', authenticateToken, async (req, res) => {
   try {
     const notes = await Note.find({ userId: req.userId });
